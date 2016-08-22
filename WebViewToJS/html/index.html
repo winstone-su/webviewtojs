@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <title>WebViewToJS</title>
+    </head>
+    
+    <style type="text/css">
+        <!--
+        .rb1 {  border-right: #6a6a6a 1px solid;    padding-right: 10px;    border-top: #fff 1px solid; padding-left: 10px; font-size: 14px;    background: #d32c47;    padding-bottom: 3px;    border-left: #fff 1px solid;    cursor: pointer;    color: #fff;    padding-top: 3px;   border-bottom: #6a6a6a 1px solid;   height: 25px}
+        .rb2{   border-right: #6a6a6a 1px solid;    padding-right: 10px;    border-top: #fff 1px solid; padding-left: 10px; font-size: 14px;    background: #C71E3A;    padding-bottom: 3px;    border-left: #fff 1px solid;    cursor: pointer;    color: #fff;    padding-top: 3px;   border-bottom: #6a6a6a 1px solid;   height: 25px}
+        -->
+        </style>
+    <script type="text/javascript" src="./wb-web-qingjs.js"></script>
+    <body>
+        <div align="center">
+            <input name="Submit" type="submit" class="rb1" value="closewindow" onmouseover="this.className='rb2';" onmouseout="this.className='rb1';" onclick="closewindow()" /> <p/>
+        </div>
+        
+        <script type="text/javascript">
+            function closewindow () {
+                // body...
+                WBNativeJSBridge.call('closewindow');
+            }
+        </script>
+    </body>
+</html>
