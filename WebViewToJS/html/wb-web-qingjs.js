@@ -22,13 +22,13 @@ var WBNativeJSBridge = {
         
         var hasCallback = callback && typeof callback == "function";
         var callbackId = hasCallback ? WBNativeJSBridge.callbacksCount++ : 0;
-//        var PROTOCOL_SCHEME = "wbweb";
+        var PROTOCOL_SCHEME = "wbweb";
         
         if (hasCallback)
             WBNativeJSBridge.callbacks[callbackId] = callback;
         
         var iframe = document.createElement("IFRAME");
-        iframe.setAttribute("src", "wbweb" + ":" + functionName + ":" + callbackId+ ":" + encodeURIComponent(JSON.stringify(args)));
+        iframe.setAttribute("src", PROTOCOL_SCHEME + ":" + functionName + ":" + callbackId+ ":" + encodeURIComponent(JSON.stringify(args)));
         document.documentElement.appendChild(iframe);
         iframe.parentNode.removeChild(iframe);
         iframe = null;

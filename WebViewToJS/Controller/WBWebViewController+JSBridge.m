@@ -57,7 +57,8 @@
     self.callbackId = callbackID;
     if([function isEqualToString:@"closewindow"]){
 //        NSLog(@"%@",args);
-        [self dismissSelf];
+//        [self dismissSelf];
+        [self returnResult:callbackID args:args];
     }
     
 }

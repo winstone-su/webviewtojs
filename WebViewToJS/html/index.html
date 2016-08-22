@@ -14,6 +14,7 @@
     <body>
         <div align="center">
             <input name="Submit" type="submit" class="rb1" value="closewindow" onmouseover="this.className='rb2';" onmouseout="this.className='rb1';" onclick="closewindow()" /> <p/>
+            <input name="Submit" type="submit" class="rb1" value="closewindow2" onmouseover="this.className='rb2';" onmouseout="this.className='rb1';" onclick="closewindow2()" /> <p/>
         </div>
         
         <script type="text/javascript">
@@ -21,6 +22,12 @@
                 // body...
                 WBNativeJSBridge.call('closewindow');
             }
+        
+        function closewindow2(){
+            WBNativeJSBridge.call('closewindow',{"type":"local"},function(result){
+                                  alert(JSON.stringify(result));
+                                  });
+        }
         </script>
     </body>
 </html>
